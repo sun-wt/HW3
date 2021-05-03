@@ -100,5 +100,8 @@ int main()
         }
         fwrite(n_color,1,n_times,pFile2);
     }
+    
+    fclose( pFile );
+    fclose( pFile2 );
     return 0;
 }

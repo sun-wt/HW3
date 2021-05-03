@@ -12,4 +12,6 @@ int main(void)
         return 0;
     }
     lyric( pFile );
+	fclose( pFile );
+	return 0;
 }

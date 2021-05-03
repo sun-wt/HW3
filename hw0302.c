@@ -25,6 +25,8 @@ int main()
     int draw[600]={0};
     int Hlose[600]={0};
     int Alose[600]={0};
+	int h[600]={0};
+    int a[600]={0};
     char *result = NULL;
     int l=0;
     while(fgets(line,600,pFile) != NULL)
@@ -44,13 +46,14 @@ int main()
             else if(i==3)
             {
                 strcpy(Hscore[l],result);
+                h[l] = (Hscore[l][0]-48);
                 gap[l]+=(Hscore[l][0]-48);
             }
             else if(i==4)
             {
                 strcpy(Ascore[l],result);
+                a[l] = (Ascore[l][0]-48);
                 gap[l]-=(Ascore[l][0]-48);
-                abs(gap[l]);
             }
             else if(i==5)
             {
@@ -137,6 +140,11 @@ int main()
             }
         }
     }
+
+	for(int i=0;i<l;i++)
+    {
+        gap[i] = abs( gap[i] );
+    }
     
     printf("1)Who is the winner in this season?\n");
     printf("2)Which team gets the most scores?\n");
@@ -159,7 +167,7 @@ int main()
             case -1:
                 break;
             case 1:
-                Champion(team,Win,count);
+                Champion(team,Win,D,count);
                 break;
             case 2:
                 ScoreKing(team,S,count);
@@ -174,7 +182,7 @@ int main()
                 Court(team,AW,count);
                 break;
             case 6:
-                Gap(home,away,gap);
+                Gap(home,away,gap,h,a);
                 break;
             case 7:                
                 for(int C=0;C<count;C++)

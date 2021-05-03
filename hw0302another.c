@@ -14,21 +14,21 @@ int choice()
     return choice;
 }
 
-void Champion(char team[600][30],int *win,int count)
+void Champion(char team[400][30],int *win,int *d,int count)
 {
     int max = 0;
     int times = 0;
     for(int i=0;i<count;i++)
     {
-        if(win[i]>max)
+        if(win[i]*3+d[i]>max)
         {
-            max=win[i];
+            max=win[i]*3+d[i];
             times=i;
         }
     }
     for(int i=0;i<count;i++)
     {
-        if(win[i]==max)
+        if(win[i]*3+d[i]==max)
         {
             printf("%s\n",team[times]);
         }
@@ -102,11 +102,11 @@ void Court(char team[600][30],int *win,int count)
     return;
 }
 
-void Gap(char h[600][30],char a[600][30],int *gap)
+void Gap(char h[400][30],char a[400][30],int *gap,int *H,int *A)
 {
     int max = 0;
     int times = 0;
-    for(int i=0;i<600;i++)
+    for(int i=0;i<400;i++)
     {
         if(gap[i]>max)
         {
@@ -114,12 +114,13 @@ void Gap(char h[600][30],char a[600][30],int *gap)
             times=i;
         }
     }
-    for(int i=0;i<600;i++)
+    for(int i=0;i<400;i++)
     {
         if(gap[i]==max)
         {
-            printf("%s and %s ,%d point\n",h[i],a[i],gap[i]);
+            printf("%s (%d) and %s (%d)\n",h[i],H[i],a[i],A[i]);
         }
     }
     return;
 }
+

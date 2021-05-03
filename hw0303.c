@@ -37,7 +37,7 @@ int main()
     {
         input[strlen(input) - 1] = 0;
     }
-    pFile = fopen(input, "r");
+    pFile = fopen(input,"r");
     if( pFile == NULL )
     {
         printf("File could not be opened!\n");
@@ -135,7 +135,7 @@ int main()
         }
     }
 
-    fclose(pFile);
-    fclose(pFile2);
+    fclose( pFile );
+    fclose( pFile2 );
     return 0;
 }

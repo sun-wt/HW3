@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <stdint.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
 #include <math.h>
 
 #define PI 3.1415926
@@ -27,11 +27,10 @@ typedef struct _sBmpheader
 
 int main()
 {
-    FILE *pFile , *pFile2 ;
+    FILE *pFile , *pFile2;
     char input[127] , output[127];
     int32_t angle = 0;
-    int32_t bytes = 0;
-    Bmpheader header = {0};
+    Bmpheader header;
     printf("Please input a BMP file: ");
     fgets(input,127,stdin);
     if( input[strlen(input) - 1] == '\n' )

@@ -133,7 +133,7 @@ int main()
                 S[i]+=(Ascore[j][0]-48);
                 L[i]+=(Hscore[j][0]-48);
                 Win[i]+=Awin[j];
-                AW[i]+=Hwin[j];
+                AW[i]+=Awin[j];
                 Rd[i]+=Ard[j];
                 D[i]+=draw[j];
                 Lose[i]+=Alose[j];
